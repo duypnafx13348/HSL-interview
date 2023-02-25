@@ -4,6 +4,7 @@ import React from "react";
 
 const NavBar = () => {
   const miniMaxSum = (arr: number[]): number[] => {
+    // sort in order from smallest to largest
     const arrSort = arr.sort((a, b) => {
       return a - b;
     });
@@ -16,8 +17,6 @@ const NavBar = () => {
     const maxSumArr = maxArr.reduce((accumulator, currentValue) => {
       return accumulator + currentValue;
     }, 0);
-
-    console.log({ arrSort });
 
     return [minSumArr, maxSumArr];
   };
