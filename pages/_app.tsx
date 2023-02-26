@@ -58,7 +58,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         </Box>
       </Container>
       <Component {...pageProps} />
-      <Box mt="60px">
+      <Box mt={{ xs: "40px", md: "60px" }}>
         <Divider />
         <Container maxWidth="md" sx={{ mt: "40px" }}>
           <Typography textAlign="center" fontSize="14px">

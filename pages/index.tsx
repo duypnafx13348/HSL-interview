@@ -127,7 +127,7 @@ const Joke = () => {
           variant="contained"
           color="success"
           onClick={handleClickNotFunny}
-          sx={{ ml: 1, borderRadius: 0 }}
+          sx={{ ml: 1, borderRadius: 0, mt: { xs: "1rem", md: 0 } }}
         >
           This is not Funny!
         </Button>
