@@ -6,8 +6,6 @@ import {
   CssBaseline,
   Box,
   Typography,
-  IconButton,
-  Avatar,
   Divider,
 } from "@mui/material";
 import type { AppProps } from "next/app";
@@ -27,6 +25,10 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         <meta property="og:title" content="Shoes Shop" />
         <meta property="og:description" content="Shoes Shop" />
         <link rel="icon" href="/vercel.svg" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
       {/* <NavBar /> */}
       <Container maxWidth="md" sx={{ height: "56px" }}>
@@ -36,8 +38,8 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           alignItems="center"
           height="inherit"
         >
-          <Box>
-            <Image src="/favicon.ico" alt="Logo" width={32} height={32} />
+          <Box display="flex" justifyContent="center" alignItems="center">
+            <Image src="/logo.jpg" alt="Logo" width={44} height={44} />
           </Box>
           <Box display="flex">
             <Box mr="1rem">
@@ -48,20 +50,20 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
                 Jim HLS
               </Typography>
             </Box>
-            <IconButton sx={{ p: 0 }}>
-              <Avatar
-                alt="Avatar"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsA4Tr66-qSq2om-Y2-TVZTn484DzYS20eDwfiCUzR&s"
-              />
-            </IconButton>
+            <Image src="/avatar.jpg" alt="avatar" width={44} height={44} />
           </Box>
         </Box>
       </Container>
       <Component {...pageProps} />
-      <Box mt={{ xs: "40px", md: "60px" }}>
-        <Divider />
+      <Box>
+        <Divider sx={{ borderColor: "rgba(0,0,0,0.5)" }} />
         <Container maxWidth="md" sx={{ mt: "40px" }}>
-          <Typography textAlign="center" fontSize="14px">
+          <Typography
+            textAlign="center"
+            fontSize="14.5px"
+            color="#a9a8a8"
+            fontWeight={500}
+          >
             This website is created as part of Hlsolutions program. The
             materials contained on this website are provided for general
             information only and do not constitute any form of advice. HLS
@@ -74,6 +76,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
             mt="1rem"
             fontSize="14px"
             fontWeight={600}
+            color="#706c6c"
           >
             Copyright 2021 HLS
           </Typography>

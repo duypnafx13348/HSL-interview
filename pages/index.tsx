@@ -1,4 +1,14 @@
-import { Box, Button, Typography, Container, Divider } from "@mui/material";
+import {
+  Box,
+  Button,
+  Typography,
+  Container,
+  Divider,
+  Dialog,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
+} from "@mui/material";
 import React, { useState } from "react";
 import { setCookie, deleteCookie } from "cookies-next";
 
@@ -22,10 +32,10 @@ const Home = () => {
           alignItems: "center",
         }}
       >
-        <Container maxWidth="md" sx={{ textAlign: "center" }}>
+        <Container maxWidth="sm" sx={{ textAlign: "center" }}>
           <Typography
             variant="h3"
-            fontSize={{ xs: "2rem", md: "2rem" }}
+            fontSize={{ xs: "2rem", sm: "2rem" }}
             mb="1rem"
           >
             A joke a day keeps the doctor away
@@ -35,9 +45,11 @@ const Home = () => {
           </Typography>
         </Container>
       </Box>
-      <Container maxWidth="md">
-        <Joke />
-      </Container>
+      <Box sx={{ backgroundColor: "rgba(242, 239, 245, 0.5)" }}>
+        <Container maxWidth="md">
+          <Joke />
+        </Container>
+      </Box>
     </>
   );
 };
@@ -84,12 +96,44 @@ const Joke = () => {
   console.log(miniMaxSum([100, 10, 50, 30, 20]));
 
   const [id, setId] = useState(0);
+  const [open, setOpen] = useState(false);
+
+  const Alert = () => {
+    const handleClose = () => {
+      setOpen(false);
+    };
+
+    return (
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogContent>
+          <DialogContentText
+            id="alert-dialog-description"
+            fontSize="1rem"
+            fontWeight={600}
+            textAlign="center"
+          >
+            That's all the jokes for today! Come back another day!
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} autoFocus>
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
+    );
+  };
 
   const handleClickFunny = () => {
     deleteCookie("funny");
     setCookie("funny", true);
     if (id >= jokes.length - 1) {
-      alert("That's all the jokes for today! Come back another day!");
+      setOpen(true);
     } else {
       setId((prev) => {
         return prev + 1;
@@ -100,7 +144,7 @@ const Joke = () => {
     deleteCookie("funny");
     setCookie("funny", false);
     if (id >= jokes.length - 1) {
-      alert("That's all the jokes for today! Come back another day!");
+      setOpen(true);
     } else {
       setId((prev) => {
         return prev + 1;
@@ -109,17 +153,31 @@ const Joke = () => {
   };
 
   return (
-    <Box padding="2rem">
+    <Box py="2rem">
       <Box>
-        <Typography>{jokes[id]?.content}</Typography>
+        <Typography fontSize="17px">{jokes[id]?.content}</Typography>
       </Box>
-      <Divider sx={{ my: "2rem", width: "80%", mx: "auto" }} />
-      <Box mt={3} textAlign="center">
+      <Divider sx={{ my: "2rem", width: "80%", mx: "auto" }} light />
+      <Box
+        mt={3}
+        textAlign="center"
+        display={{ xs: "flex" }}
+        flexDirection={{ xs: "column", sm: "row" }}
+        justifyContent="center"
+        alignItems="center"
+      >
         <Button
           variant="contained"
           color="primary"
           onClick={handleClickFunny}
-          sx={{ borderRadius: 0 }}
+          sx={{
+            borderRadius: 0,
+            width: "170px",
+            height: "2rem",
+            fontSize: "12px",
+            textTransform: "none",
+            mb: { xs: 0, sm: "60px" },
+          }}
         >
           This is Funny!
         </Button>
@@ -127,11 +185,21 @@ const Joke = () => {
           variant="contained"
           color="success"
           onClick={handleClickNotFunny}
-          sx={{ ml: 1, borderRadius: 0, mt: { xs: "1rem", md: 0 } }}
+          sx={{
+            ml: { xs: 0, sm: "20px" },
+            borderRadius: 0,
+            width: "170px",
+            height: "2rem",
+            fontSize: "12px",
+            textTransform: "none",
+            mt: { xs: "1rem", sm: 0 },
+            mb: { xs: "1rem", sm: "60px" },
+          }}
         >
-          This is not Funny!
+          This is not funny.
         </Button>
       </Box>
+      <Alert />
     </Box>
   );
 };
