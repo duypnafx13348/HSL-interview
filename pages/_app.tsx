@@ -25,10 +25,6 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         <meta property="og:title" content="Shoes Shop" />
         <meta property="og:description" content="Shoes Shop" />
         <link rel="icon" href="/vercel.svg" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-          rel="stylesheet"
-        ></link>
       </Head>
       {/* <NavBar /> */}
       <Container maxWidth="md" sx={{ height: "56px" }}>
