@@ -22,7 +22,7 @@ const Home = () => {
     <>
       <Box
         sx={{
-          backgroundColor: "#379f37",
+          backgroundColor: "#29b363",
           padding: "2rem",
           textAlign: "center",
           color: "#fff",
@@ -35,17 +35,18 @@ const Home = () => {
         <Container maxWidth="sm" sx={{ textAlign: "center" }}>
           <Typography
             variant="h3"
-            fontSize={{ xs: "2rem", sm: "2rem" }}
+            fontSize="1.75rem"
+            fontWeight={600}
             mb="1rem"
           >
             A joke a day keeps the doctor away
           </Typography>
-          <Typography fontSize={{ xs: "12px", sm: "14px" }}>
+          <Typography fontSize={{ xs: "10px", sm: "13px" }} fontWeight={600}>
             If you joke wrong way, your teeth have to pay.
           </Typography>
         </Container>
       </Box>
-      <Box sx={{ backgroundColor: "rgba(242, 239, 245, 0.5)" }}>
+      <Box sx={{ backgroundColor: "#fcfcfc" }}>
         <Container maxWidth="md">
           <Joke />
         </Container>
@@ -155,7 +156,9 @@ const Joke = () => {
   return (
     <Box py="2rem">
       <Box>
-        <Typography fontSize="17px">{jokes[id]?.content}</Typography>
+        <Typography fontSize="17px" color="#787878">
+          {jokes[id]?.content}
+        </Typography>
       </Box>
       <Divider sx={{ my: "2rem", width: "80%", mx: "auto" }} light />
       <Box

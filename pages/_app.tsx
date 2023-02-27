@@ -37,12 +37,18 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           <Box display="flex" justifyContent="center" alignItems="center">
             <Image src="/logo.jpg" alt="Logo" width={44} height={44} />
           </Box>
-          <Box display="flex">
+          <Box display="flex" justifyContent="center" alignItems="center">
             <Box mr="1rem">
-              <Typography variant="body2" color="grey">
+              <Typography variant="body2" color="#c4c4c4">
                 Handicrafted by
               </Typography>
-              <Typography variant="body2" fontWeight={600} textAlign="right">
+              <Typography
+                variant="body2"
+                fontWeight={500}
+                textAlign="right"
+                color="#5b5b5b"
+                fontSize="12px"
+              >
                 Jim HLS
               </Typography>
             </Box>
@@ -56,23 +62,38 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         <Container maxWidth="md" sx={{ mt: "40px" }}>
           <Typography
             textAlign="center"
-            fontSize="14.5px"
-            color="#a9a8a8"
+            fontSize="13px"
+            color="#aaaaaa"
             fontWeight={500}
           >
             This website is created as part of Hlsolutions program. The
             materials contained on this website are provided for general
+          </Typography>
+          <Typography
+            fontSize="13px"
+            textAlign="center"
+            color="#aaaaaa"
+            fontWeight={500}
+          >
             information only and do not constitute any form of advice. HLS
             assumes no responsibility for the accuracy of any particular
-            statement and accept no liability for any loss or damage which may
-            arise from reliance on the information contained on this site.
+            statement and
+          </Typography>
+          <Typography
+            fontSize="13px"
+            textAlign="center"
+            color="#aaaaaa"
+            fontWeight={500}
+          >
+            accept no liability for any loss or damage which may arise from
+            reliance on the information contained on this site.
           </Typography>
           <Typography
             textAlign="center"
             mt="1rem"
             fontSize="14px"
-            fontWeight={600}
-            color="#706c6c"
+            fontWeight={500}
+            color="#959595"
           >
             Copyright 2021 HLS
           </Typography>
