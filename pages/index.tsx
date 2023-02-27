@@ -41,8 +41,12 @@ const Home = () => {
           >
             A joke a day keeps the doctor away
           </Typography>
-          <Typography fontSize={{ xs: "10px", sm: "13px" }} fontWeight={600}>
-            If you joke wrong way, your teeth have to pay.
+          <Typography
+            fontSize={{ xs: "10px", sm: "13px" }}
+            fontWeight={600}
+            color="e2f4ea"
+          >
+            If you joke wrong way, your teeth have to pay. (Serious)
           </Typography>
         </Container>
       </Box>
