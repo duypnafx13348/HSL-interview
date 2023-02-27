@@ -37,7 +37,7 @@ const Home = () => {
             variant="h3"
             fontSize="1.75rem"
             fontWeight={600}
-            mb="1rem"
+            mb="12px"
           >
             A joke a day keeps the doctor away
           </Typography>
