@@ -155,7 +155,7 @@ const Joke = () => {
 
   return (
     <Box py="2rem">
-      <Box>
+      <Box pl={0.5}>
         <Typography fontSize="17px" color="#787878">
           {jokes[id]?.content}
         </Typography>
