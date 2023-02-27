@@ -22,7 +22,7 @@ const Home = () => {
     <>
       <Box
         sx={{
-          backgroundColor: "#4fc14f",
+          backgroundColor: "#379f37",
           padding: "2rem",
           textAlign: "center",
           color: "#fff",
@@ -40,7 +40,7 @@ const Home = () => {
           >
             A joke a day keeps the doctor away
           </Typography>
-          <Typography variant="body1">
+          <Typography fontSize={{ xs: "12px", sm: "14px" }}>
             If you joke wrong way, your teeth have to pay.
           </Typography>
         </Container>
